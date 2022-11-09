@@ -1,0 +1,15 @@
+11:23:19.651 [main] DEBUG jdbc.Guerra main - Preparamos la guerra.
+11:23:19.655 [main] DEBUG jdbc.Guerra main - Creamos a los guerrores
+11:23:19.656 [main] DEBUG jdbc.Guerra main - Mostramos los guerreros por consola
+11:23:19.656 [main] DEBUG jdbc.repositorio.GuerreroImpl guardar - Insertando guerreroGuerrero [id=0, nombre=Guillermo, tipo=marine, puntosAtaque=4, puntosDefensa=42, puntosVida=100]
+11:23:20.167 [main] DEBUG jdbc.repositorio.GuerreroImpl guardar - Finaliza insercion guerrero
+11:23:20.167 [main] DEBUG jdbc.repositorio.GuerreroImpl guardar - Insertando guerreroGuerrero [id=0, nombre=Sergio, tipo=zombie, puntosAtaque=79, puntosDefensa=85, puntosVida=100]
+11:23:20.170 [main] DEBUG jdbc.repositorio.GuerreroImpl guardar - Finaliza insercion guerrero
+11:23:20.172 [main] DEBUG jdbc.Guerra main - Comienza la batalla
+11:23:20.172 [main] DEBUG jdbc.Guerra main - Presentamos al guerrero A Guerrero [id=0, nombre=Guillermo, tipo=marine, puntosAtaque=4, puntosDefensa=42, puntosVida=100]
+11:23:20.172 [main] DEBUG jdbc.Guerra main - Presentamos al guerrero B Guerrero [id=0, nombre=Sergio, tipo=zombie, puntosAtaque=79, puntosDefensa=85, puntosVida=100]
+11:23:20.173 [main] DEBUG jdbc.Guerra main - Guerrero A ataca y el Guerrero B defiende
+11:23:20.173 [main] DEBUG jdbc.Guerra main - Guerrero B ataca y el Guerrero A defiende
+11:23:20.173 [main] INFO  jdbc.Guerra main - El guerrero B Sergio ha ganado la batalla 100
+11:23:20.174 [main] INFO  jdbc.Guerra main - El guerrero A Guillermo ha perdido la batalla -406
+11:23:20.174 [main] DEBUG jdbc.Guerra main - Se termino la guerra.

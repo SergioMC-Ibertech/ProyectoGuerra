@@ -23,8 +23,6 @@
     <Loggers>
         <Logger name="jdbc" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
-        </Logger>
-        <Logger name=".jdbc" level="debug" additivity="false">
             <AppenderRef ref="rollingFile"/>
         </Logger>
         <Root level="error">
