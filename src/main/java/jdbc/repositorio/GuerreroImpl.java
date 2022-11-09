@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import jdbc.modelo.Guerrero;
 import jdbc.util.ConexionBaseDeDatos;
+import jdbc.util.UtilsGuerra;
 
 public class GuerreroImpl implements RepositorioGuerrero<Guerrero>{
 	
@@ -49,15 +50,15 @@ public class GuerreroImpl implements RepositorioGuerrero<Guerrero>{
 	}
 
 	@Override
-	public int atacar(int guerreroA, int guerreroB) {
-		int vida=0;
-		return vida;
+	public int atacar(int guerrero) {
+		int ataque=UtilsGuerra.aleatorio()*guerrero;
+		return ataque;
 	}
 
 	@Override
-	public int defender(int guerreroA, int guerreroB) {
-		int vida=0;
-		return vida;
+	public int defender(int guerrero) {
+		int defensa=UtilsGuerra.aleatorio()*guerrero;
+		return defensa;
 	}	
 	
 	private Guerrero crearGuerrero(ResultSet rs) throws SQLException{
