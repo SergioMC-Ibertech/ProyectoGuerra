@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+	<Properties>
+		<Property name="logPath">.\recursos</Property>
+		<Property name="rollingFileName">trazabilidad</Property>
+	</Properties>
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n"/>
         </Console>
+        <RollingFile name="rollingFile"
+			fileName="${logPath}/${rollingFileName}.log"
+			filePattern="${logPath}/${rollingFileName}_%d{yyyy-MM-dd}.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n" />
+			<Policies>
+				<!-- Causes a rollover if the log file is older than the current JVM's 
+					start time -->
+				<OnStartupTriggeringPolicy />
+			</Policies>
+		</RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="curso.java.jdbc" level="debug" additivity="false">
-            <AppenderRef ref="LogToConsole"/>
-        </Logger>
         <Logger name="jdbc" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
         </Logger>
-        <Logger name="curso.java.hibernate" level="error" additivity="false">
-            <AppenderRef ref="LogToConsole"/>
+        <Logger name=".jdbc" level="debug" additivity="false">
+            <AppenderRef ref="rollingFile"/>
         </Logger>
         <Root level="error">
             <AppenderRef ref="LogToConsole"/>

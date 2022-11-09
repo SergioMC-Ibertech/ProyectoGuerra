@@ -1,6 +1,5 @@
 package jdbc;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import jdbc.modelo.Guerrero;
 import jdbc.repositorio.GuerreroImpl;
 import jdbc.repositorio.RepositorioGuerrero;
-import jdbc.util.UtilsFichero;
 import jdbc.util.UtilsGuerra;
 
 
@@ -21,7 +19,6 @@ public class Guerra {
 
 	//Encargado de mostrar las trazas
 	private static final Logger logger = LogManager.getLogger(Guerra.class);
-	private static final Logger log = LogManager.getLogger("./recursos/");
 		
 	public static void main(String[] args) {
 		logger.debug("Preparamos la guerra.");
@@ -81,18 +78,7 @@ public class Guerra {
 		} else {
 			logger.info("Los contendientes deben seguir luchando.");
 		}
-		// Generamos el archivo de trazabilidad
-		String trazabilidad = "./recursos/trazabilidad.txt";
-		UtilsFichero fs = new UtilsFichero();
-		try {
-			fs.crearArchivo(trazabilidad);
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		logger.debug("Se termino la guerra.");
 	}
 
